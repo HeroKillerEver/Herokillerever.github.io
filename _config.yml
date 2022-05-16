@@ -1,0 +1,11 @@
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-seo-tag
+
+title: "Dai Zhongxiang"
+
+author: 
+  name: "Dai Zhongxiang"
+  bio: "Ph.D. student, Department of Computer Science, National University of Singapore"
+  location: "Singapore"
+  email: daizhongxiang@u.nus.edu
