@@ -8,6 +8,59 @@
   <meta name="description"
     content="Yu Haibin's personal website. Machine Learning Engineer at TikTok. Research in probabilistic ML, optimization, generative modeling, and recommendation systems.">
   <meta name="author" content="Yu Haibin">
+  <link rel="canonical" href="https://herokillerever.github.io/">
+
+  <!-- Open Graph (Facebook, LinkedIn, WeChat, Lark, etc.) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Yu Haibin — ML Engineer & Researcher">
+  <meta property="og:description"
+    content="Machine Learning Engineer at TikTok. Research in probabilistic ML, optimization, generative modeling, and recommendation systems.">
+  <meta property="og:url" content="https://herokillerever.github.io/">
+  <meta property="og:image" content="https://herokillerever.github.io/images/avatar_2024.jpg">
+  <meta property="og:image:alt" content="Yu Haibin profile photo">
+  <meta property="profile:first_name" content="Haibin">
+  <meta property="profile:last_name" content="Yu">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Yu Haibin — ML Engineer & Researcher">
+  <meta name="twitter:description"
+    content="Machine Learning Engineer at TikTok. Research in probabilistic ML, optimization, generative modeling, and recommendation systems.">
+  <meta name="twitter:image" content="https://herokillerever.github.io/images/avatar_2024.jpg">
+
+  <!-- Structured data for search engines / knowledge graph -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yu Haibin",
+      "givenName": "Haibin",
+      "familyName": "Yu",
+      "url": "https://herokillerever.github.io/",
+      "image": "https://herokillerever.github.io/images/avatar_2024.jpg",
+      "jobTitle": "Machine Learning Engineer",
+      "worksFor": { "@type": "Organization", "name": "TikTok" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "National University of Singapore" },
+        { "@type": "CollegeOrUniversity", "name": "Massachusetts Institute of Technology" },
+        { "@type": "CollegeOrUniversity", "name": "Beihang University" }
+      ],
+      "email": "mailto:buaanusyu@gmail.com",
+      "sameAs": [
+        "https://scholar.google.com/citations?user=fTI2T_oAAAAJ&hl=en",
+        "https://github.com/HeroKillerEver/"
+      ],
+      "knowsAbout": [
+        "Probabilistic Machine Learning",
+        "Gaussian Processes",
+        "Bayesian Optimization",
+        "Recommendation Systems",
+        "Causal Inference",
+        "Multi-task Learning"
+      ]
+    }
+  </script>
+
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,7 +146,7 @@
     .nav-logo {
       font-weight: 700;
       font-size: 18px;
-      color: var(--color-text-heading);
+      color: #f5f4ef;
       text-decoration: none;
       letter-spacing: -0.02em;
     }
@@ -108,7 +161,7 @@
     }
 
     .nav-links a {
-      color: var(--color-text-muted);
+      color: rgba(245, 244, 239, 0.75);
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
@@ -117,7 +170,8 @@
       transition: var(--transition);
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--color-primary);
       background: var(--color-primary-glow);
     }
@@ -136,7 +190,7 @@
       display: block;
       width: 22px;
       height: 2px;
-      background: var(--color-text-muted);
+      background: rgba(245, 244, 239, 0.8);
       border-radius: 2px;
       transition: var(--transition);
     }
@@ -295,7 +349,7 @@
       background: var(--color-primary-glow);
       color: var(--color-primary);
       transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.15);
+      box-shadow: 0 4px 16px rgba(218, 119, 86, 0.18);
     }
 
     .social-links a svg {
@@ -473,6 +527,60 @@
       font-weight: 600;
     }
 
+    .news-archive {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .news-archive.expanded {
+      display: flex;
+      animation: archive-fade 0.3s ease;
+    }
+
+    @keyframes archive-fade {
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .news-archive-toggle {
+      margin-top: 12px;
+      padding: 6px 10px;
+      background: none;
+      border: none;
+      color: var(--color-text-heading);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .news-archive-toggle:hover {
+      color: var(--color-primary);
+    }
+
+    .news-archive-toggle .chevron {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .news-archive-toggle.expanded .chevron {
+      transform: rotate(180deg);
+    }
+
     /* ===== Education Section ===== */
     .education-list {
       display: flex;
@@ -490,7 +598,7 @@
 
     .edu-card:hover {
       border-color: var(--color-primary);
-      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.08);
+      box-shadow: 0 4px 20px rgba(218, 119, 86, 0.1);
       transform: translateY(-1px);
     }
 
@@ -560,7 +668,7 @@
 
     .pub-card:hover {
       border-color: var(--color-accent);
-      box-shadow: 0 4px 20px rgba(167, 139, 250, 0.08);
+      box-shadow: 0 4px 20px rgba(96, 143, 129, 0.1);
     }
 
     .pub-card h3 {
@@ -577,6 +685,13 @@
 
     .pub-card h3 a:hover {
       color: var(--color-accent);
+    }
+
+    .pub-title-static {
+      color: var(--color-text-heading);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
     }
 
     .pub-authors {
@@ -681,7 +796,7 @@
 
     .service-row:hover {
       border-color: var(--color-accent-secondary);
-      box-shadow: 0 4px 20px rgba(52, 211, 153, 0.06);
+      box-shadow: 0 4px 20px rgba(209, 157, 85, 0.1);
     }
 
     .service-row-label {
@@ -831,14 +946,51 @@
       text-decoration: underline;
     }
 
-    .visitor-map {
-      margin-top: 24px;
-      opacity: 0.7;
+    .visitor-counter {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      opacity: 0.9;
       transition: var(--transition);
     }
 
-    .visitor-map:hover {
+    .visitor-counter:hover {
       opacity: 1;
+    }
+
+    .visitor-counter-link {
+      display: inline-flex;
+      align-items: stretch;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 6px;
+      overflow: hidden;
+      text-decoration: none;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: var(--transition);
+    }
+
+    .visitor-counter-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(218, 119, 86, 0.18);
+    }
+
+    .visitor-label {
+      padding: 5px 10px;
+      background: #3d3929;
+      color: #f5f4ef;
+      letter-spacing: 0.04em;
+    }
+
+    .visitor-count {
+      padding: 5px 12px;
+      background: var(--color-primary);
+      color: #ffffff;
+      min-width: 44px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
     }
 
     /* ===== Scroll Animations ===== */
@@ -894,10 +1046,16 @@
         top: 60px;
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(15, 23, 42, 0.95);
         backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         padding: 16px 24px;
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        gap: 4px;
+      }
+
+      .nav-links.active a {
+        padding: 10px 12px;
       }
 
       .section-header h2 {
@@ -1039,7 +1197,8 @@
       </div>
       <div class="hero-image-wrapper">
         <div class="hero-image">
-          <img src="images/avatar_2024.jpg" alt="Yu Haibin profile photo">
+          <img src="images/avatar_2024.jpg" alt="Yu Haibin profile photo" width="200" height="200"
+            decoding="async">
         </div>
         <div class="hero-caption">
           Taken at the famous 12 Apostles during my road trip in Australia
@@ -1064,6 +1223,10 @@
       </div>
       <div class="news-list">
         <div class="news-item">
+          <span class="news-date">May 2026</span>
+          <span class="news-content">Invited to serve as a reviewer for <strong>NeurIPS 2026</strong>!</span>
+        </div>
+        <div class="news-item">
           <span class="news-date">Aug 2025</span>
           <span class="news-content">Our paper <strong>"Crocodile: Cross Experts Covariance for Disentangled Learning in
               Multi-Domain Recommendation"</strong> is accepted to <strong>CIKM 2025</strong>!</span>
@@ -1073,39 +1236,49 @@
           <span class="news-content">Invited to serve as a reviewer for <strong>ICLR 2025</strong>, <strong>ICML
               2025</strong>, and <strong>NeurIPS 2025</strong>!</span>
         </div>
-        <!-- <div class="news-item">
+        <div class="news-item">
           <span class="news-date">May 2024</span>
           <span class="news-content">Our paper <strong>"Ads Recommendation in a Collapsed and Entangled World"</strong>
             is accepted to <strong>KDD 2024</strong>!</span>
         </div>
-        <div class="news-item">
-          <span class="news-date">May 2024</span>
-          <span class="news-content">Invited to serve as a reviewer for <strong>NeurIPS 2024</strong>!</span>
+
+        <div class="news-archive" id="newsArchive">
+          <div class="news-item">
+            <span class="news-date">May 2024</span>
+            <span class="news-content">Invited to serve as a reviewer for <strong>NeurIPS 2024</strong>!</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">Dec 2022</span>
+            <span class="news-content">Our paper <strong>"Recursive Reasoning-Based Training-Time Adversarial Machine
+                Learning"</strong> is accepted to <strong><em>Artificial Intelligence</em></strong>!</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">Nov 2022</span>
+            <span class="news-content">Our paper <strong>"AdaTask: A Task-aware Adaptive Learning Rate Approach to
+                Multi-task Learning"</strong> is accepted to <strong>AAAI 2023</strong>!</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">May 2022</span>
+            <span class="news-content">Our paper <strong>"On Provably Robust Meta-Bayesian Optimization"</strong> is
+              accepted to <strong>UAI 2022</strong>!</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">Mar 2022</span>
+            <span class="news-content">Invited to serve as a reviewer for <strong>NeurIPS 2022</strong>.</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">Nov 2021</span>
+            <span class="news-content">Invited to serve as a reviewer for <strong>ICML 2022</strong>.</span>
+          </div>
         </div>
-        <div class="news-item">
-          <span class="news-date">Dec 2022</span>
-          <span class="news-content">Our paper <strong>"Recursive Reasoning-Based Training-Time Adversarial Machine
-              Learning"</strong> is accepted to <strong><em>Artificial Intelligence</em></strong>!</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Nov 2022</span>
-          <span class="news-content">Our paper <strong>"AdaTask: A Task-aware Adaptive Learning Rate Approach to
-              Multi-task Learning"</strong> is accepted to <strong>AAAI 2023</strong>!</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">May 2022</span>
-          <span class="news-content">Our paper <strong>"On Provably Robust Meta-Bayesian Optimization"</strong> is
-            accepted to <strong>UAI 2022</strong>!</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Mar 2022</span>
-          <span class="news-content">Invited to serve as a reviewer for <strong>NeurIPS 2022</strong>.</span>
-        </div>
-        <div class="news-item">
-          <span class="news-date">Nov 2021</span>
-          <span class="news-content">Invited to serve as a reviewer for <strong>ICML 2022</strong>.</span>
-        </div> -->
       </div>
+      <button class="news-archive-toggle" id="newsArchiveToggle" aria-expanded="false" aria-controls="newsArchive">
+        <span class="archive-label">View archive</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </button>
     </section>
 
     <!-- Education -->
@@ -1218,8 +1391,8 @@
         </div>
 
         <div class="pub-card">
-          <h3><a href="" target="_blank">Genetic Variation and Nonalcoholic Fatty Liver Disease: Field Synopsis,
-              Systematic Meta-Analysis, and Epidemiological Evidence</a></h3>
+          <h3 class="pub-title-static">Genetic Variation and Nonalcoholic Fatty Liver Disease: Field Synopsis,
+            Systematic Meta-Analysis, and Epidemiological Evidence</h3>
           <p class="pub-authors">Yamei Li, Xiang Xiao, Jie Wang, Yixu Liu, Xiongfeng Pan, <span class="me">Haibin
               Yu</span>, Jiayou Luo, Miyang Luo</p>
           <div class="pub-venue">
@@ -1372,7 +1545,7 @@
           <div class="service-tags">
             <span class="service-tag">ICML <span class="tag-years">(2022, 2025)</span></span>
             <span class="service-tag">ICLR <span class="tag-years">(2021–2025)</span></span>
-            <span class="service-tag">NeurIPS <span class="tag-years">(2020–2025)</span></span>
+            <span class="service-tag">NeurIPS <span class="tag-years">(2020–2026)</span></span>
             <span class="service-tag">IJCAI <span class="tag-years">(2021)</span></span>
             <span class="service-tag">UAI <span class="tag-years">(2023)</span></span>
             <span class="service-tag">ECAI <span class="tag-years">(2023, 2024)</span></span>
@@ -1431,13 +1604,15 @@
         <a href="https://scholar.google.com/citations?user=fTI2T_oAAAAJ&hl=en" target="_blank">Google Scholar</a>
         <a href="https://github.com/HeroKillerEver/" target="_blank">GitHub</a>
       </div>
-      <div class="visitor-map">
-        <a href="https://clustrmaps.com/site/1apyv" title="Visit tracker"><img
-            src="//www.clustrmaps.com/map_v2.png?d=tIaqpdlkgvpd1B-hatThtkIFqhoIfy8g0ElGcSFiFQA&cl=ffffff"
-            alt="Visitor map" style="max-width: 220px; border-radius: 8px;"></a>
+      <div class="visitor-counter">
+        <a class="visitor-counter-link" href="https://herokillerever.goatcounter.com" target="_blank" rel="noopener"
+          aria-label="Visitor stats">
+          <span class="visitor-label">visitors</span>
+          <span class="visitor-count" id="visitorCount">—</span>
+        </a>
       </div>
       <p class="footer-credit" style="margin-top: 16px;">
-        Last updated Mar 2026 · Designed by <a href="https://claude.ai" target="_blank"
+        Last updated May 2026 · Designed by <a href="https://claude.ai" target="_blank"
           style="display: inline-flex; align-items: center; gap: 4px;">Claude <svg role="img" viewBox="0 0 24 24"
             fill="currentColor" style="width: 14px; height: 14px;" xmlns="http://www.w3.org/2000/svg">
             <title>Claude</title>
@@ -1448,8 +1623,21 @@
     </div>
   </footer>
 
+  <!-- GoatCounter — privacy-friendly analytics, no cookies. Dashboard: https://herokillerever.goatcounter.com -->
+  <script data-goatcounter="https://herokillerever.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
   <!-- Scripts -->
   <script>
+    // Fetch total visit count from GoatCounter and render in the footer badge
+    const GOATCOUNTER_CODE = 'herokillerever';
+    fetch(`https://${GOATCOUNTER_CODE}.goatcounter.com/counter/TOTAL.json`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        const el = document.getElementById('visitorCount');
+        if (el && data && data.count) el.textContent = data.count;
+      })
+      .catch(() => { });
+
     // Mobile navigation toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
@@ -1461,6 +1649,19 @@
       link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
 
+    // News archive toggle
+    const archiveToggle = document.getElementById('newsArchiveToggle');
+    const newsArchive = document.getElementById('newsArchive');
+    if (archiveToggle && newsArchive) {
+      archiveToggle.addEventListener('click', () => {
+        const isExpanded = newsArchive.classList.toggle('expanded');
+        archiveToggle.classList.toggle('expanded', isExpanded);
+        archiveToggle.setAttribute('aria-expanded', String(isExpanded));
+        archiveToggle.querySelector('.archive-label').textContent =
+          isExpanded ? 'Hide archive' : 'View archive';
+      });
+    }
+
     // Scroll-based fade-in animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1471,6 +1672,27 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Active section highlight in nav
+    const sectionLinks = Array.from(navLinks.querySelectorAll('a[href^="#"]'));
+    const sectionMap = new Map(
+      sectionLinks
+        .map(link => [document.getElementById(link.getAttribute('href').slice(1)), link])
+        .filter(([section]) => section)
+    );
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const link = sectionMap.get(entry.target);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          sectionLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+    sectionMap.forEach((_, section) => sectionObserver.observe(section));
 
     // Navbar shadow on scroll
     const nav = document.querySelector('nav');
